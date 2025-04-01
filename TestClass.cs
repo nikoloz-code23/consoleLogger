@@ -2,15 +2,6 @@ using System;
 
 namespace ConsoleLogProject
 {
-    public enum LogType
-    {
-        DEBUG,
-        INFO,
-        WARN,
-        ERROR,
-        FATAL,
-    }
-
     public class ConsoleLogger
     {
         string time = DateTime.Now.ToLongTimeString();
