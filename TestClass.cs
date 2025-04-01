@@ -6,7 +6,9 @@ namespace ConsoleLogProject
     {
         DEBUG,
         INFO,
+        WARN,
         ERROR,
+        FATAL,
     }
 
     public class ConsoleLogger
