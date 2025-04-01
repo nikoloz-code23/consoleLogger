@@ -6,7 +6,15 @@ namespace ConsoleLogProject{
             ConsoleLogger consoleLogger = new ConsoleLogger();
             consoleLogger.LogMessage("");
             consoleLogger.LogMessage("This is a test!", LogType.INFO);
-            consoleLogger.LogMessage("Shit something went wrong, god forbid I code again...", LogType.ERROR, '#');
+            try
+            {
+                throw new Exception("Something went wrong :(");
+            }
+            catch (Exception e)
+            {
+                consoleLogger.LogMessage(e.Message, LogType.ERROR);
+            }
+
             Console.ReadKey();
         }
     }

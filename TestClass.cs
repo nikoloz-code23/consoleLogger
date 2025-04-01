@@ -17,7 +17,7 @@ namespace ConsoleLogProject
             }
             catch (Exception e) 
             {
-                Console.WriteLine($"[EXCEPTION ERROR]: {e.ToString()}");
+                Console.WriteLine($"[EXCEPTION ERROR]: {e.Message}");
             }
         }
     }
