@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 /**
  * Basic logger class that can be utilized as a parent-class for future loggers.
@@ -12,15 +13,15 @@ namespace ConsoleLogProject
         /**
          * This will be the time at which the message has been called from.
          */
-        string time = DateTime.Now.ToLongTimeString();
-
+        private string time = DateTime.Now.ToLongTimeString();
         private static string PatternLayout = "[{type} {time}]: {message}{newLine}";
+        private static List<IAppender> APPENDERS = new List<IAppender>() { new FileAppender(), new ConsoleAppender() };
 
         /**
          * @param message The text that you want to display.
          * @param type The log type of the message, DEBUG by default.
          * @param newLine By default, '\n', however, you can choose what symbol you want to be displayed at the end of the string.
-         */ 
+         */
         public void LogMessage(string message, LogType type = LogType.DEBUG, char newLine = '\n')
         {
             try
@@ -35,7 +36,7 @@ namespace ConsoleLogProject
                 { 
                     throw new Exception("String can't be Null, Empty or a Whitespace."); 
                 }
-                Console.Write(ConstructMessage(message, type, newLine));
+                APPENDERS.ForEach(appender => appender.Print(ConstructMessage(message, type, newLine)));
             }
             catch (Exception e) 
             {

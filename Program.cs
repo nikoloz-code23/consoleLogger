@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace ConsoleLogProject{
     class Program{
@@ -14,7 +15,7 @@ namespace ConsoleLogProject{
             {
                 consoleLogger.LogMessage(e.Message, LogType.ERROR);
             }
-
+            
             Console.ReadKey();
         }
     }
