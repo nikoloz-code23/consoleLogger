@@ -14,6 +14,8 @@ namespace ConsoleLogProject
          */
         string time = DateTime.Now.ToLongTimeString();
 
+        private static string PatternLayout = "[{type} {time}]: {message}{newLine}";
+
         /**
          * @param message The text that you want to display.
          * @param type The log type of the message, DEBUG by default.
@@ -33,12 +35,22 @@ namespace ConsoleLogProject
                 { 
                     throw new Exception("String can't be Null, Empty or a Whitespace."); 
                 }
-                Console.Write($"[{type} {time}]: {message}{newLine}");
+                Console.Write(ConstructMessage(message, type, newLine));
             }
             catch (Exception e) 
             {
                 Console.WriteLine($"[EXCEPTION ERROR]: {e.Message}");
             }
+        }
+
+        private string ConstructMessage(string message, LogType type, char newLine)
+        {
+            string Result = PatternLayout;
+            Result = Result.Replace("{type}", type.ToString());
+            Result = Result.Replace("{time}", time);
+            Result = Result.Replace("{message}", message);
+            Result = Result.Replace("{newLine}", newLine.ToString());
+            return Result;
         }
     }
 }
