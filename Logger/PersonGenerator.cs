@@ -6,11 +6,11 @@ namespace ConsoleLogProject
     public class PersonGenerator
     {
         private string[] firstNames = [
-            "John", "Maria", "James", "Lewis", "Peter"
+            "John", "Maria", "James", "Lewis", "Peter", "Riley", "Huey", "Jasmine", "Gwen", "Miles"
         ];
         
         private string[] lastNames = [
-            "Lee", "Smith", "Griffin", "Bond", "Hopps"
+            "Lee", "Smith", "Griffin", "Bond", "Hopps", "Morales", "Freeman", "Brown", "Jones", "Stacey"
         ];
 
         public string GeneratePerson()
