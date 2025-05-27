@@ -3,7 +3,7 @@ using System.IO;
 
 /**
  * Basic logger class that can be utilized as a parent-class for future loggers.
- * @author ltrlynick
+ * @author nikoloz-code23
  */
 
 namespace ConsoleLogProject
