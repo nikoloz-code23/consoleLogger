@@ -3,7 +3,7 @@ using System;
 /**
  * This enum contains logging level constraints.
  * 
- * @author ltrlynick
+ * @author nikoloz-code23
  * 
  */
 
